@@ -53,6 +53,8 @@ namespace ContinuousHapticFeedback
         {
             int zoomFactor = factor > 0 ? 1 : -1;
             size = new Size((int)(size.Width + zoomFactor), (int)(size.Height + zoomFactor));
+            if(currentBitmap != null)
+                currentBitmap.Dispose();
             currentBitmap = new Bitmap(stoneBitmap, size);
             this.pictureBox1.Image = currentBitmap;
         }        
